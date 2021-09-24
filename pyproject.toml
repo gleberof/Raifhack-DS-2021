@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "raifhack-ds-2021"
+name = "raif_hack"
 version = "0.1.0"
 description = "Zvezdochka team. Raifhack DS 2021. Commercial Real estate price prediction"
 authors = ["Zvezdochka team"]
@@ -7,7 +7,7 @@ authors = ["Zvezdochka team"]
 [tool.poetry.dependencies]
 python = "3.8.9"
 pandas = "^1.3.2"
-numpy = "^1.21.2"
+numpy = "^1.20.3"
 sklearn = "^0.0"
 seaborn = "^0.11.2"
 matplotlib = "^3.4.3"
@@ -32,10 +32,10 @@ pytorch-tabnet = "^3.1.1"
 wget = "^3.2"
 sweetviz = "^2.1.3"
 category-encoders = "^2.2.2"
+faiss-gpu = "^1.7.1"
+numba = "^0.54.0"
 
 [tool.poetry.dev-dependencies]
-jupyter = "^1.0.0"
-jupyterlab = "^3.1.11"
 mypy = "^0.910"
 flake8 = "^3.9.2"
 isort = "^5.9.3"
@@ -44,7 +44,39 @@ pytest = "^6.2.5"
 pre-commit = "^2.15.0"
 black = "^21.8b0"
 poethepoet = "^0.10.0"
+notebook = "^6.4.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+src_paths = ["raif_hack", "tests"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.venv
+  | build
+  | dist
+  | notebooks
+  | data
+  )/
+'''
+
+[tool.mypy]
+python_version = 3.8
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+files = "raif_hack/"

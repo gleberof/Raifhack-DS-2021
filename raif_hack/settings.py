@@ -1,3 +1,13 @@
+from pathlib import Path
+
+
+ROOT_DIR = Path(__file__).parents[0].parents[0]
+DATA_DIR = ROOT_DIR / "data"
+TRAIN_PATH = DATA_DIR / "train.csv"
+TEST_PATH = DATA_DIR / "test.csv"
+SUBMISSION_PATH = DATA_DIR / "submission.csv"
+
+
 TARGET = 'per_square_meter_price'
 # признаки (или набор признаков), для которых применяем smoothed target encoding
 CATEGORICAL_STE_FEATURES = ['region', 'city', 'realty_type']
@@ -71,3 +81,4 @@ LOGGING_CONFIG = {
         "": {"handlers": ["file_handler"], "level": "INFO", "propagate": False},
     },
 }
+

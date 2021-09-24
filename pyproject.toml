@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "raifhack-ds-2021"
+name = "raif_hack"
 version = "0.1.0"
 description = "Zvezdochka team. Raifhack DS 2021. Commercial Real estate price prediction"
 authors = ["Zvezdochka team"]

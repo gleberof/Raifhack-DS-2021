@@ -28,6 +28,7 @@ Cython="*"
 networkx = "^2.6.3"
 osmnx = "^1.1.1"
 geopy = "^2.2.0"
+pytorch-tabnet = "^3.1.1"
 
 [tool.poetry.dev-dependencies]
 jupyter = "^1.0.0"

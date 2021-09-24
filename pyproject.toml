@@ -45,3 +45,34 @@ poethepoet = "^0.10.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+src_paths = ["raif_hack", "tests"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.venv
+  | build
+  | dist
+  | notebooks
+  | data
+  )/
+'''
+
+[tool.mypy]
+python_version = 3.8
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+files = "raif_hack/"
